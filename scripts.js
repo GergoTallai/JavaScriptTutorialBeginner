@@ -1,9 +1,36 @@
+
+
+
 //#region Ciklusok
+/*
+//While
+var tomb = ['AGSWFDD', 23, 12, true, 44, 1222];
+i = 0;
+while(i < tomb.length) {
+    
+    console.log(tomb[i]);
+    i++
+}
+*/
+/*
+var tomb = ['AGSWFDD', 23, 12, true, 44, 1222, 'strin g'];
 
+//FOR + Break
+for (var i = 0; i < tomb.length; i++){
+    if (typeof(tomb[i]) === 'boolean') {
+        break;
+    }
+    console.log(tomb[i]);
+}
 
-
-
-
+//FOR + CONTINUE
+for (var i = 0; i < tomb.length; i++){
+    if (typeof(tomb[i]) !== 'string') {
+        continue;
+    }
+    console.log(tomb[i]);
+}
+*/
 //#endregion
 
 //#region Objektum metódusok

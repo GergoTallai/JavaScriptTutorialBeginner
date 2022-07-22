@@ -1,5 +1,11 @@
+//#region DOM Manipuláció
+//DOM a teljes HTML oldal
+//HTML dokumentum minden eleme objektum
 
 
+
+
+//#endregion
 
 //#region Ciklusok
 /*

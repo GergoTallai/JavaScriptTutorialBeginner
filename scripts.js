@@ -1,4 +1,73 @@
+//#region Függvények, First-class és Callback
+/*
+Függvény az Object típusnak egy példánya
+Úgy viselkedik mint bármilyen másik obj
+Egyetlen változóban tárolhatunk egyetlen függvényt
+Egy függvényt átadhatunk egy másik fv-nek mint paraméter
+Egy függvény visszatéri értéke lehet egy függvény is
+*/
+
+
+
+//#endregion
+
+//#region Egyszerű típusok és objektumok
+/*
+var x = 10;
+var y = x;
+x = 100;
+console.log( x, y)
+
+//Itt felveszi az értéket és kész
+var o1 = {
+    sz: 100,
+    m: 200
+};
+
+//Itt rámutat az objektumra
+var o2 = o1;
+o1.sz = 150;
+console.log(o1.sz)
+console.log(o2.sz)
+
+var a = 10;
+var o = {
+    nev: 'Odon',
+    kor: 12
+};
+function modosit(a, b){
+    a = 40;
+    b.nev = 'Lajos'
+}
+modosit(a, o);
+console.log(a, o.nev)
+*/
+//#endregion
+
+//#region Objektum create
+/*
+var szemelyProto = {
+    korSzamitas: function(){
+        console.log(2022- this.szuletesiEv)
+    }
+};
+//"A" verzió (közvetlen örököl)
+var odon = Object.create(szemelyProto);
+odon.nev = 'Ödön';
+odon.szuletesiEv = 1969;
+odon.foglalkozas = 'Pék'
+
+//"B" verzió
+var kati = Object.create(szemelyProto, {
+    nev: {value: 'Kati'},
+    szuletesiEv: {value: 1945},
+    foglalkozas: {value: 'Kozmetikus'}
+});
+*/
+//#endregion
+
 //#region Objektumok és prototípus lánc
+/*
 var Szemely = function(nev, szuletesiEv, foglalkozas) {
     this.nev = nev;
     this.szuletesiEv = szuletesiEv;
@@ -12,6 +81,7 @@ var odon = new Szemely('Ödön', 1976, 'Grafikus');
 odon.korSzamitas();
 
 console.log(odon)
+*/
 //#endregion
 
 //#region DOM Manipuláció

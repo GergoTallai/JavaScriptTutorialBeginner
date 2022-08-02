@@ -1,3 +1,19 @@
+//#region Objektumok és prototípus lánc
+var Szemely = function(nev, szuletesiEv, foglalkozas) {
+    this.nev = nev;
+    this.szuletesiEv = szuletesiEv;
+    this.foglalkozas = foglalkozas;
+}
+
+Szemely.prototype.korSzamitas = function(){
+    console.log(2022-this.szuletesiEv)
+}
+var odon = new Szemely('Ödön', 1976, 'Grafikus');
+odon.korSzamitas();
+
+console.log(odon)
+//#endregion
+
 //#region DOM Manipuláció
 //DOM a teljes HTML oldal
 //HTML dokumentum minden eleme objektum

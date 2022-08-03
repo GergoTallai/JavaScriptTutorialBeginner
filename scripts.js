@@ -1,3 +1,35 @@
+//#region Visszadott függvények
+
+function interjuKerdes(foglalkozas) {
+    if (foglalkozas === 'tanár') {
+        return function(nev) {
+            console.log(nev + ' meg tudná mondani milyen tárgyakat oktat?')
+        }
+    } else if (foglalkozas === 'eladó') {
+        return function(nev) {
+            console.log(nev + ' hogyan kezelne egy vevői reklamációt?')
+        }
+    } else {
+        return function(nev) {
+            console.log(nev + ' mi a foglalkozása?')
+        }
+    }
+}
+
+//kerdesTanaroknak amit vissza ad a first class az if ág után, a return paranccsal
+var kerdesTanaroknak = interjuKerdes('tanár');
+//Amit visszaadott, meghívjuk. kerdesTanaroknak = névtelen return function(nev)...
+kerdesTanaroknak('Pál')
+
+var kerdesEladoknak = interjuKerdes('eladó');
+kerdesEladoknak('Béla');
+kerdesEladoknak('Géza');
+kerdesEladoknak('Bence');
+//Egyben meghívva
+interjuKerdes('tanár')('Péter');
+
+//#endregion
+
 //#region Függvények, First-class és Callback
 /*
 Függvény az Object típusnak egy példánya
@@ -7,8 +39,33 @@ Egy függvényt átadhatunk egy másik fv-nek mint paraméter
 Egy függvény visszatérési értéke lehet egy függvény is
 */
 
+/*
+var evek = [1954, 1991, 1993, 2000, 2001, 2002, 2003, 2005];
 
+function tombMuvelet(tomb, fv) {
+    var eredmeny = [];
 
+    for (var i=0; i < tomb.length; i++) {
+        eredmeny.push(fv(tomb[i]));
+    }
+    return eredmeny;
+}
+
+function korSzamitas(elem) {
+    return 2022 - elem;
+}
+
+function felnott(elem) {
+    return elem >= 18;
+}
+
+var korok = tombMuvelet(evek, korSzamitas);
+console.log(korok);
+
+var felnottek = tombMuvelet(korok, felnott);
+console.log(felnottek);
+
+*/
 //#endregion
 
 //#region Egyszerű típusok és objektumok

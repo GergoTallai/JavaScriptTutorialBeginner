@@ -4,7 +4,7 @@ Függvény az Object típusnak egy példánya
 Úgy viselkedik mint bármilyen másik obj
 Egyetlen változóban tárolhatunk egyetlen függvényt
 Egy függvényt átadhatunk egy másik fv-nek mint paraméter
-Egy függvény visszatéri értéke lehet egy függvény is
+Egy függvény visszatérési értéke lehet egy függvény is
 */
 
 

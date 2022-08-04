@@ -1,5 +1,126 @@
-//#region Visszadott függvények
+//#region Bind metódus
+/*
+var evek = [1954, 1991, 1993, 2000, 2001, 2002, 2003, 2005];
 
+function tombMuvelet(tomb, fv) {
+    var eredmeny = [];
+
+    for (var i=0; i < tomb.length; i++) {
+        eredmeny.push(fv(tomb[i]));
+    }
+    return eredmeny;
+}
+
+function korSzamitas(elem) {
+    return 2022 - elem;
+}
+
+function felnott(korhatar, elem) {
+    return elem >= korhatar;
+}
+
+var korok = tombMuvelet(evek, korSzamitas)
+console.log(korok);
+
+var felnottKorJapanba = tombMuvelet(korok, felnott.bind(this, 20));
+
+console.log(felnottKorJapanba);
+
+*/
+//#endregion
+
+//#region Apply, blind, call
+/*
+var odon = {
+    nev: 'Ödön',
+    kor: 45,
+    foglalkozas: 'csillagász',
+    udvozles: function(stilus, napszak) {
+        if (stilus === 'hivatalos'){
+            console.log('Üdvözlöm, jó ' + napszak + ' kívánok! ' + this.nev + ' vagyok.');
+        } else if (stilus ==='baráti') {
+            console.log('Szia, jó ' + napszak);
+        }
+    }
+}
+
+odon.udvozles('hivatalos', 'reggelt')
+odon.udvozles('baráti', 'napot')
+
+var bela = {
+    nev: 'Béla',
+    kor: 55,
+    foglalkozas: 'portás'
+};
+//call
+odon.udvozles.call(bela, 'hivatalos', 'Estét');
+//apply: elsőt kívűl mindent tömbként vár
+odon.udvozles.apply(bela, ['baráti', 'ReggelTTT']);
+
+//bind nem meghívja hanem eltárolja és betárazható pl egy változóba
+var odonBarati = odon.udvozles.bind(odon, 'baráti', 'napot!!!');
+odonBarati();
+*/
+//#endregion
+
+//#region Closure
+/*
+//Clouser összefoglaló: egy belső függvény mindig képes hozzáférni az őt tartalmazó külső függvény paramétereihez és változóihoz még azután is, hogy a külső függvény befejezte a futását
+function nyugdij(ev) {
+    var szoveg = 'Nyugdíjazásig hátralévő évek száma: '
+    return function(szuletesiEv) {
+        var datumObjektum = new Date();
+        var aktualisEv = datumObjektum.getFullYear();
+        var kor = aktualisEv - szuletesiEv;
+        console.log(szoveg + (ev - kor));
+    }
+}
+
+var nyugdijazasUSA = nyugdij(66);
+nyugdijazasUSA(1992)
+nyugdij(65)(1992)
+
+///////////////////////////////////////////
+var szamlalo = 0;
+
+var leptet = (
+    function() {
+        var szamlalo = 0;
+        return function() {
+            szamlalo++;
+            console.log(szamlalo)
+        }
+    }
+)();
+
+leptet();
+leptet();
+leptet();
+*/
+//#endregion
+
+//#region Azonnal meghívódó függvények
+//Normál:
+/*
+function jatek(){
+    var pont = Math.random() * 10;
+    console.log (pont >= 5);
+}
+jatek();
+*/
+/*
+//Azonnali:
+(function(teszt) {
+    var pont = Math.random() * 10;
+    console.log (pont >= 5);
+    console.log (teszt);
+})('Teszt Hello');
+
+/*
+//#endregion
+
+//#region Visszadott függvények
+/*
 function interjuKerdes(foglalkozas) {
     if (foglalkozas === 'tanár') {
         return function(nev) {
@@ -27,7 +148,7 @@ kerdesEladoknak('Géza');
 kerdesEladoknak('Bence');
 //Egyben meghívva
 interjuKerdes('tanár')('Péter');
-
+*/
 //#endregion
 
 //#region Függvények, First-class és Callback
